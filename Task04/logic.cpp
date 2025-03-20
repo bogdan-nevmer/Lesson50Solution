@@ -34,6 +34,7 @@ int get_min_value(int** matrix, int n, int m) {
 	{
 		for (int j = 0; j < m; j++)
 		{
+		
 			if (matrix[i][j] < value) {
 				value = matrix[i][j];
 			}
