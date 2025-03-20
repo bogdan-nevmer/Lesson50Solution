@@ -8,6 +8,11 @@
 #include "logic.h"
 
 double calculate_arithmetical_mean_of_nonzero_elements(int** matrix, int n, int m) {
+	if (n <= 0 || m <= 0 || matrix == nullptr) {
+		return 0.0;
+	}
+	
+	
 	double sum = 0;
 	int count = 0;
 
@@ -22,5 +27,5 @@ double calculate_arithmetical_mean_of_nonzero_elements(int** matrix, int n, int 
 
 		}
 	}
-	return sum / count;
+	return count > 0 ? sum / count : 0.0 ;
 }
