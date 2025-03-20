@@ -8,6 +8,33 @@
 
 #include "logic.h"
 
+bool is_more_positive_value_in_row(int* vector,int m) {
+	int count = 0;
+	for (int i = 0; i < m; i++)
+	{
+		if (vector[i] > 0) {
+			count++;
+
+		}
+	}
+	return count > m - count;
+}
+
+
 int count_rows_with_more_positive_values(int** matrix, int n, int m) {
-	return 0;
+	if (n <= 0 || m <= 0 || matrix == nullptr) {
+		return 0.0;
+	}
+
+	int count = 0;
+	
+	for (int i = 0; i < n; i++)
+	{
+		if (is_more_positive_value_in_row(matrix[i],m)) 
+		{
+			count++;
+		}
+	}
+
+	return count;
 }
